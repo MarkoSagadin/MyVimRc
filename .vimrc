@@ -10,8 +10,6 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'Valloric/YouCompleteMe' 
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -22,8 +20,18 @@ filetype plugin indent on    " required
 if has('gui_running')
     call plug#begin('~/.vim/plugged')
     Plug 'lervag/vimtex'
+    Plug 'scrooloose/nerdtree'
+    Plug 'ludovicchabant/vim-gutentags'
     call plug#end()
 endif
+
+:set tags=./tags,tags          "Used to tell where tags are located
+"nnoremap <C-l> <C-]> 
+nnoremap ii :tag <c-r><c-w><cr>
+nnoremap oo <C-t>
+"map <C-s> :wa \| :!cd .. | C:\MinGW\msys\1.0\bin\make.exe flash <enter>
+
+
 
 let g:vimtex_view_method = 'mupdf'
 
@@ -77,6 +85,9 @@ inoremap jk 
 
 " Set font 
 set guifont=Consolas:h10
+
+" Open NerdTree with control + X
+map <C-c> :NERDTreeToggle<CR>
 
 " Used for running python from VIM
 filetype on

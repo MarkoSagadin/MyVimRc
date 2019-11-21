@@ -1,0 +1,23 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/89393951/
+$	.vimrc	/^nnoremap $ <nop>$/;"	m
+<C-H>	.vimrc	/^nnoremap <C-H> <C-W><C-H>$/;"	m
+<C-J>	.vimrc	/^nnoremap <C-J> <C-W><C-J>$/;"	m
+<C-K>	.vimrc	/^nnoremap <C-K> <C-W><C-K>$/;"	m
+<C-L>	.vimrc	/^nnoremap <C-L> <C-W><C-L>$/;"	m
+<C-c>	.vimrc	/^map <C-c> :NERDTreeToggle<CR>$/;"	m
+B	.vimrc	/^nnoremap B ^$/;"	m
+E	.vimrc	/^nnoremap E \$$/;"	m
+MyVimRc	README.md	/^# MyVimRc$/;"	c
+^	.vimrc	/^nnoremap ^ <nop>$/;"	m
+g:vimtex_view_method	.vimrc	/^let g:vimtex_view_method = 'mupdf'$/;"	v
+ii	.vimrc	/^nnoremap ii :tag <c-r><c-w><cr>$/;"	m
+jk	.vimrc	/^inoremap jk $/;"	m
+oo	.vimrc	/^nnoremap oo <C-t>$/;"	m
+python_highlight_all	.vimrc	/^let python_highlight_all=1$/;"	v
