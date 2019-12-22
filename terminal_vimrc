@@ -1,42 +1,31 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
 filetype plugin indent on    " required
 
+call plug#begin('~/.vim/plugged')
+Plug 'lervag/vimtex'
+Plug 'scrooloose/nerdtree'
+Plug 'ludovicchabant/vim-gutentags'
+"Plug 'chriskempson/base16-vim'
+Plug 'altercation/vim-colors-solarized'
+call plug#end()
 
-
-
-if has('gui_running')
-    call plug#begin('~/.vim/plugged')
-    Plug 'lervag/vimtex'
-    Plug 'scrooloose/nerdtree'
-    Plug 'ludovicchabant/vim-gutentags'
-    call plug#end()
-endif
 
 :set tags=./tags,tags          "Used to tell where tags are located
-"nnoremap <C-l> <C-]> 
-nnoremap ii :tag <c-r><c-w><cr>
-nnoremap oo <C-t>
-"map <C-s> :wa \| :!cd .. | C:\MinGW\msys\1.0\bin\make.exe flash <enter>
 
+
+if $TERM == "xterm-256color"
+    set t_Co=256
+endif
 
 
 let g:vimtex_view_method = 'mupdf'
 
-colorscheme molokai 
 syntax enable               "enable automatic syntax
+let g:solarized_contrast="low"
+let g:solarized_termcolors=256
+set background=dark
+"colorscheme solarized
+
 set clipboard=unnamed       "connect system clipboard with Vim clipboard
 set tabstop=4               " number of visual spaces per TAB
 set softtabstop=4           " number of spaces in tab when editing
@@ -46,6 +35,7 @@ set number                  " show line numbers
 set showcmd                 " show command in bottom bar
 set cursorline              " highlight current line
 set colorcolumn=80          " highlight specified column for line wraping
+highlight ColorColumn ctermbg=7
 filetype indent on          " load filetype-specific indent files
 set wildmenu                " visual autocomplete for command menu
 set lazyredraw              " redraw only when we need to.
@@ -65,6 +55,8 @@ set backspace=indent,eol,start "Backspace will work normaly in insert mode
 set linebreak               "Editor window does not break words in the middle anymore.
 set encoding=utf-8          "For special slovenian characters"
 set fileencoding=utf-8      "For special slovenian characters"
+set cursorline!
+set lazyredraw
 
 " split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -86,8 +78,12 @@ inoremap jk 
 " Set font 
 set guifont=Consolas:h10
 
-" Open NerdTree with control + X
+" Open NerdTree with control + c
 map <C-c> :NERDTreeToggle<CR>
+
+"Tag searching
+nnoremap ii :tag <c-r><c-w><cr>
+nnoremap oo <C-t>
 
 " Used for running python from VIM
 filetype on
